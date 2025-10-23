@@ -48,14 +48,14 @@ module testbench;
     $display("[%0t] Start fork join", $time);
     fork
 //    thread 1 
-      #40 $display("[%0t] thread 1 is finished" $time);
+      #40 $display("[%0t] thread 1 is finished", $time);
       
 //       thread 2
-      #5   $display("[%0t] thread 2 is start" $time);
-      #15  $display("[%0t] thread 2 is finished" $time);
+      #5   $display("[%0t] thread 2 is start", $time);
+      #15  $display("[%0t] thread 2 is finished", $time);
       
 //       thread 3 
-      #30 $display("[%0t] thread 3 is finished" $time);
+      #30 $display("[%0t] thread 3 is finished", $time);
     
     join
     $display("[%0t] End fork join", $time);
