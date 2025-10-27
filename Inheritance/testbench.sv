@@ -60,11 +60,27 @@
 //      $finish;
 //    end
 	   
+//    subpacket sub_pkt;
+   
+//    initial begin
+//      sub_pkt = new();
+//      sub_pkt.show();
+//      $finish;
+//    end
+   
+//  Polymorphism  
+   packet base_pkt = new();
+   i2c_packet i2c_pkt = new();
+   SPI_packet spi_pkt = new();
+   
+   initial begin
+   	base_pkt = i2c_pkt;
+     base_pkt.show();
+     
+     base_pkt = spi_pkt;
+     base_pkt.show();
+     
+   end
    
  endmodule
-
-
-
-
-
 

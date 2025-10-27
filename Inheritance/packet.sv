@@ -82,4 +82,62 @@
 // endclass
 
 
+// class packet;
+//   bit[7:0] address;
+//   bit[3:0] command;
+  
+// //   local int pid;
+//   protected int pid;
+//   function new();  
+//   endfunction
+  
+// endclass
+
+// class subpacket extends packet;
+//   bit[50:0] data;
+//   function new();
+//     super.new();
+//   endfunction
+  
+//   function void show();
+//     $display("pid = %0d", pid);
+//   endfunction
+  
+// endclass
+
+
+//  Polymorphism
+class packet;
+  bit[7:0] address;
+  bit[3:0] command;
+  
+  function new();
+  endfunction
+  
+  virtual task show();
+    $display("send base packet");
+  endtask
+endclass
+
+class i2c_packet extends packet;
+  function new();
+    super.new();
+  endfunction
+  
+  virtual task show();
+    $display("send I2C packet");
+  endtask
+endclass
+
+class SPI_packet extends packet;
+  function new();
+    super.new();
+  endfunction
+  
+  virtual task show();
+    $display("send SPI packet");
+  endtask
+endclass
+
+
 
